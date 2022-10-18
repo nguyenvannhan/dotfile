@@ -32,6 +32,13 @@ for _, server in pairs(servers) do
     capabilities = attach.capabilities
   }
 
+  if server == "jsonls"
+  then
+    opts['init_options'] = {
+      provideFormatter = true
+    }
+  end
+
   lspconfig[server].setup(opts)
 
   ::continue::

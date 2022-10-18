@@ -77,4 +77,9 @@ return require('packer').startup(function()
   use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
   --Autopairs
   use "windwp/nvim-autopairs"
+
+  use {
+    "joechrisellis/lsp-format-modifications.nvim",
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 end)

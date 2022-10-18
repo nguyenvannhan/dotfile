@@ -19,9 +19,14 @@ null_ls.setup({
       diagnostics.phpcs.with({
           extra_args = { "--standard=PSR2" }
       }),
+
+      -- JSON Formatting
+      formatting.prettierd,
+      diagnostics.jsonlint,
     },
 
-    -- JSON Formatting
-    formatting.prettier,
-    diagnostics.jsonlint,
+    on_attach = function(client, bufnr)
+      local lsp_format_modifications = require"lsp-format-modifications"
+      lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
+    end
 })
