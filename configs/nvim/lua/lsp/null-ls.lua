@@ -20,4 +20,8 @@ null_ls.setup({
           extra_args = { "--standard=PSR2" }
       }),
     },
+
+    -- JSON Formatting
+    formatting.prettier,
+    diagnostics.jsonlint,
 })

@@ -1,3 +1,18 @@
+function getOS()
+	-- ask LuaJIT first
+	if jit then
+		return jit.os
+	end
+
+	-- Unix, Linux variants
+	local fh,err = assert(io.popen("uname -o 2>/dev/null","r"))
+	if fh then
+		osname = fh:read()
+	end
+
+	return osname or "Windows"
+end
+
 vim.opt.autoindent = true
 vim.opt.title = true
 vim.opt.fileencodings = { 'utf8', 'sjis', 'euc-jp', 'latin' }
@@ -12,6 +27,13 @@ vim.opt.termguicolors = true
 vim.opt.shiftwidth=2
 vim.opt.tabstop=2
 vim.opt.wildignore:append('*/node_modules/*,*/vendor/*')
+
+if getOS() == "Darwin" or getOS() == "OSX"
+then
+  vim.cmd[[set clipboard=unnamed]]
+else 
+  vim.cmd[[set clipboard=unnamedplus]]
+end
 
 vim.cmd[[set number relativenumber]]
 vim.cmd[[set nu rnu]]
