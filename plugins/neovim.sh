@@ -1,4 +1,4 @@
-brew install neovim tree-sitter luajit ninja
+brew install neovim tree-sitter luajit ninja luarocks
 
 brew install tmux
 

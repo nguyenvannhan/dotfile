@@ -41,7 +41,7 @@ do
             brew update && brew upgrade
             # Disable GateKeeper
             sudo spctl --master-disable
-            brew install openssl            
+            brew install openssl wget   
             ;;
         1) 
             echo "----- Install Iterm2 -----"

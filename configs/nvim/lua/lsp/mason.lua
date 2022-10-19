@@ -9,7 +9,6 @@ local servers = {
   "phpactor",
   "diagnosticls",
   "solargraph",
-  "jsonls"
 }
 
 mason.setup()
@@ -31,13 +30,6 @@ for _, server in pairs(servers) do
     on_attach = attach.on_attach,
     capabilities = attach.capabilities
   }
-
-  if server == "jsonls"
-  then
-    opts['init_options'] = {
-      provideFormatter = true
-    }
-  end
 
   lspconfig[server].setup(opts)
 
