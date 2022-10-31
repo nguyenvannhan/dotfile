@@ -9,6 +9,7 @@ local servers = {
   "phpactor",
   "diagnosticls",
   "solargraph",
+  "jsonls",
 }
 
 mason.setup()
