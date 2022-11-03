@@ -3,154 +3,114 @@
 
 while :
 do
-    echo "========== START SETUP =========="
-    echo "0. Install Basic Setup (After Refresh MacOs)"
-    echo "1. Instal Iterm2"
-    echo "2. Install Iterm - Zsh - Oh My ZSH"
-    echo "3. Install Neccessary Fonts"
-    echo "4. Install Postman"
-    echo "5. Install Sublime Text"
-    echo "6. Install Nginx Server"
-    echo "7. Install PHP (Many Version)"
-    echo "8. Install Mariadb"
-    echo "9. Install Dnsmasq (Setup .test domain is localhost)"
-    echo "10. Install Jetbrain Toolbox"
-    echo "11. Install Fast Node Management (fnm)"
-    echo "12. Install Composer"
-    echo "13. Install Spectacle"
-    echo "14. Install Spotify"
-    echo "15. Install NeoVim + Config"
-    echo "16. Install Alacritty"
-    echo "17. Install Tmux"
-    echo "18. Install SDKMan"
-    echo "19. Install Docker"
-    echo "20. Install RVM"
-    echo "Ctrl + c ToExit"
+    echo "================================="
+    echo "=========== SETUP MENU =========="
+    echo "================================="
+    echo "Choose a one option or enter 0 to exit"
+    echo "1. Install Basic Tools"
+    echo "2. Install Basic Dev Tools"
+    echo "3. Install - Config ZSH"
+    echo "4. Install Nginx Server"
+    echo "5. Install PHP (Many Version)"
+    echo "6. Install Composer"
+    echo "7. Install Mariadb"
+    echo "8. Install Dnsmasq (Setup .test domain is localhost)"
+    echo "9. Install Fast Node Management (fnm)"
+    echo "10. Install NeoVim + Config"
+    echo "11. Install Alacritty"
+    echo "12. Install Tmux"
+    echo "13. Install SDKMan"
+    echo "14. Install RVM"
+    echo ""
+    echo "0. Exit"
     echo "========== END SETUP =========="
-    echo "Please choose one options"
-    
+    echo "" 
     read inputOption
 
     case $inputOption in
         0) 
-            echo "========== Setup VimRC =========="
-            ln -sf $PWD/configs/.vimrc $HOME
-            echo "----- Install Homebrew -----"
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            echo "----- # Install Homebrew -----"
-            brew update && brew upgrade
-            # Disable GateKeeper
-            sudo spctl --master-disable
-            brew install openssl wget   
+            exit 0
             ;;
+
         1) 
-            echo "----- Install Iterm2 -----"
-            brew install --cask iterm2
-            echo "----- #  Install Iterm2 -----"
+            echo "----- Install basic tools -----"
+            chmod +x ./plugins/osx/basic.sh 
+            ./plugins/osx/basic.sh 
+            echo "----- # End install basic tools -----"
             ;;
         2)
-            echo "----- Setup ZSH -----"
-            chmod +x ./plugins/zsh.sh
-            ./plugins/zsh.sh
-            echo "----- # Setup ZSH -----"
+            echo "----- Install Basic Dev tools ----"
+            chmod +x ./plugins/osx/dev.sh 
+            ./plugins/osx/dev.sh
+            echo "----- # End Install Basic Dev Tools -----"
             ;;
         3)
-            echo "----- Install Neccessary Fonts -----"
-            chmod +x ./plugins/fonts.sh
-            ./plugins/fonts.sh 
-            echo "----- # Install Neccessary Fonts -----"
+            echo "----- Install - Config ZSH -----"
+            chmod +x ./plugins/zsh.sh
+            ./plugins/zsh.sh
+            echo "----- #  ZSH -----"
             ;;
         4)
-            echo "----- Install Postman -----"
-            brew install --cask postman
-            echo "----- # Install Postman -----"
-            ;;
-        5) 
-            echo "----- Install Sublime Text -----"
-            brew install --cask sublime-text
-            echo "----- # Install Sublime Text ------"
-            ;;
-        6)
             echo "----- Setup Nginx -----"
-            chmod +x plugins/nginx.sh
-            ./plugins/nginx.sh
+            chmod +x plugins/osx/nginx.sh
+            ./plugins/osx/nginx.sh
             echo "----- # Setup Nginx -----"
             ;;
-        7)
+        5)
             echo "----- Setup PHP -----"
-            chmod +x plugins/php.sh
-            ./plugins/php.sh
+            chmod +x plugins/osx/php.sh
+            ./plugins/osx/php.sh
             echo "----- # Setup PHP -----"
             ;;
-        8) 
-            echo "----- Setup Mariadb -----"
-            chmod +x plugins/mariadb.sh
-            ./plugins/mariadb.sh
-            echo "----- # Setup Mariadb -----"
-            ;;
-        9)
-            echo "----- Setup DnsMasq -----"
-            chmod +x plugins/dnsmasq.sh
-            ./plugins/dnsmasq.sh
-            echo "----- # Setup DnsMasq -----"
-            ;;
-        10) 
-            echo "----- Install Jetbrain Toolbox -----"
-            brew install --cask jetbrains-toolbox
-            echo "----- # Install Jetbrain Toolbox -----"
-            ;;
-        11) 
-            echo "----- Install FNM -----"
-            curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-            echo "----- # Install FNM -----"
-            ;;
-        12)
+        6)
             echo "----- Install Composer -----"
             brew install composer
             echo "----- # Install Composer -----"
             ;;
-        13)
-            echo "----- Install Spectacle -----"
-            brew install --cask spectacle
-            echo "----- # Install Spectacle -----"
+        7) 
+            echo "----- Setup Mariadb -----"
+            chmod +x plugins/osx/mariadb.sh
+            ./plugins/osx/mariadb.sh
+            echo "----- # Setup Mariadb -----"
             ;;
-        14)
-            echo "---- Install Spotify ----"
-            brew install --cask spotify
-            echo "---- # Install Spotify ----"
+        8)
+            echo "----- Setup DnsMasq -----"
+            chmod +x plugins/osx/dnsmasq.sh
+            ./plugins/osx/dnsmasq.sh
+            echo "----- # Setup DnsMasq -----"
             ;;
-        15)
+        9) 
+            echo "----- Install FNM -----"
+            curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
+            echo "----- # Install FNM -----"
+            ;;
+        10)
            echo "---- Install NeoVim ----"
-           chmod +x plugins/neovim.sh
-           ./plugins/neovim.sh
+           chmod +x plugins/osx/neovim.sh
+           ./plugins/osx/neovim.sh
            echo "---- # Install NeoVim ---"
            ;;
-        16)
+        11)
            echo "---- Install Alacritty ----"
-           brew install --cask alacritty
-           ln -sf $PWD/configs/alacritty $HOME/.config/alacritty
+           chmod +x plugins/osx/alacritty.sh 
+           ./plugins/osx/alacritty.sh
            echo "---- # Install Alacritty ----"
            ;;
-        17)
+        12)
           echo "---- Install Tmux -----"
           brew install tmux
           ln -sf $PWD/configs/.tmux.conf $HOME/.tmux.conf
           echo "---- # Install Tmux ----"
           ;;
-        18)
+        13)
           echo "---- Install SDKMan ----"
           curl -s "https://get.sdkman.io?rcupdate=false" | bash
           echo "---- # Install SDKMan ----"
           ;;
-        19)
-          echo "------ Install Docker -----"
-          brew install --cask docker
-          echo "----- # Install Docker ----"
-          ;;
-        20)
+        14)
           echo "------ Install RVM -----"
-          chmod +x plugins/rvm.sh
-          ./plugins/rvm.sh
+          chmod +x plugins/osx/rvm.sh
+          ./plugins/osx/rvm.sh
           echo "----- # Install RVM -----"
           ;;
         *) 

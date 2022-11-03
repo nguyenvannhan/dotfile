@@ -21,5 +21,3 @@ echo "--- Symlink zshrc"
 ln -sf $PWD/configs/.zshrc $HOME
 
 chsh -s $(which zsh)
-
-exec /bin/zsh
