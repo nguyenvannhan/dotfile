@@ -46,8 +46,8 @@ do
             ;;
         3)
             echo "----- Install - Config ZSH -----"
-            chmod +x ./plugins/zsh.sh
-            ./plugins/zsh.sh
+            chmod +x ./plugins/osx/zsh.sh
+            ./plugins/osx/zsh.sh
             echo "----- #  ZSH -----"
             ;;
         4)
