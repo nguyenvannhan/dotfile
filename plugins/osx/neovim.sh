@@ -25,3 +25,4 @@ else
     ln -s $PWD/configs/nvim $HOME/.config/nvim
 fi
 
+git config --global core.editor "nvim"
