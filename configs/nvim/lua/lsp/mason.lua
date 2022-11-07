@@ -6,13 +6,23 @@ if not mason_status_ok or  not mason_lsp_status_ok then
 end
 
 local servers = {
-  "phpactor",
   "diagnosticls",
-  "solargraph",
   "jsonls",
+  "sumneko_lua",
+  "phpactor",
+  "solargraph",
 }
 
-mason.setup()
+mason.setup({
+  ui = {
+    icons = {
+        package_installed = "✓",
+        package_pending = "➜",
+        package_uninstalled = "✗"
+    }
+  }
+})
+
 mason_lsp.setup({
   ensure_installed = servers,
   automatic_installation = true,

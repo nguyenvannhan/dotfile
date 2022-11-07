@@ -18,4 +18,10 @@ then
     mkdir $HOME/.config
 fi
 
-ln -sf $PWD/configs/nvim $HOME/.config/nvim
+if [[ -L $HOME/.config/nvim ]]
+then
+    echo "Link nvim config folder already"
+else
+    ln -s $PWD/configs/nvim $HOME/.config/nvim
+fi
+

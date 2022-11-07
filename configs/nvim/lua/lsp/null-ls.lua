@@ -6,6 +6,8 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
+local attach_config = require('lsp.attach')
+
 null_ls.setup({
 	debug = false,
 	sources = {
@@ -24,10 +26,20 @@ null_ls.setup({
 		-- JSON Formatting
 		formatting.prettierd,
 		diagnostics.jsonlint,
+
+		-- Shell
+		formatting.shfmt,
+		diagnostics.shellcheck,
 	},
 
-	on_attach = function(client, bufnr)
+	on_attach = function (client, bufnr)
+		attach_config.on_attach(client, bufnr)
+
+		-- LSP Format Modification
 		local lsp_format_modifications = require("lsp-format-modifications")
 		lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
-	end,
+
+		
+  	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>FormatModifications<CR>", { noremap = true, silent = true })
+	end
 })
