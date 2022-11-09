@@ -1,7 +1,10 @@
 #! /bin/bash
 
 echo "----- Setup VimRC -----"
-ln -sf $PWD/configs/.vimrc $HOME
+if not [[ -L $HOME/.vỉmc ]]
+then
+    ln -sf $PWD/configs/.vimrc $HOME
+fi
 
 echo "----- Install Homebrew -----"
 which -s brew
@@ -16,7 +19,8 @@ echo "----- Disable GateKeeper -----"
 sudo spctl --master-disable
 
 echo "----- Install neccessary tools -----"
-brew install openssl wget iterm2 spotify rectangle
+brew install openssl wget iterm2 
+brew install --cask spotify rectangle
 
 
 echo "----- Install Neccessary Fonts -----"

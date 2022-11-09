@@ -1,7 +1,9 @@
 #! /bin/bash
 
+sudo apt-get update && sudo apt-get upgrade
+
 echo "----- Install ZSH -----"
-brew install zsh
+sudo apt-get install zsh
 
 echo "----- Install Oh-My-Zsh -----"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
