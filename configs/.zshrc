@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nguyenvannhan/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # fnm
-export PATH=/Users/nguyenvannhan/.fnm:$PATH
+export PATH=${HOME}/.fnm:$PATH
 eval "`fnm env`"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -113,8 +113,11 @@ eval "`fnm env`"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-export PATH=/Users/nguyenvannhan/fvm/default/bin:$PATH
+export PATH=${HOME}/fvm/default/bin:$PATH
 
-alias luamake=/Users/nguyenvannhan/.config/nvim/language-servers/lua-language-server/3rd/luamake/luamake
+alias luamake=${HOME}/.config/nvim/language-servers/lua-language-server/3rd/luamake/luamake
 
 source ${HOME}/.rvm/scripts/rvm
+
+# Yarn global bin
+PATH="$(yarn global bin):$PATH"

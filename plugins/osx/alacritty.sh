@@ -2,7 +2,7 @@
 
 brew install --cask alacritty
 
-if [-L $HOME/.config/alacritty] 
+if [[ -L $HOME/.config/alacritty ]]
 then 
     echo "Exists alacritty config already"
 else 
