@@ -1,3 +1,5 @@
+#! /bin/bash 
+
 brew install gpg
 
 curl -sSL https://rvm.io/mpapis.asc | gpg --import -
