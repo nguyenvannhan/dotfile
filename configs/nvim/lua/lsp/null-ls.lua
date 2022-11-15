@@ -6,7 +6,7 @@ end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
-local attach_config = require('lsp.attach')
+local attach_config = require("lsp.attach")
 
 null_ls.setup({
 	debug = false,
@@ -20,8 +20,10 @@ null_ls.setup({
 			extra_args = { "--rules=@PSR2,no_unused_imports,ordered_imports" },
 		}),
 		diagnostics.phpcs.with({
-			extra_args = { "--standard=PSR2" },
+			extra_args = { "--standard=PSR2 --default-standard=PSR2" },
 		}),
+		-- BLADE Formatting
+		formatting.blade_formatter,
 
 		-- JSON Formatting
 		formatting.prettierd,
@@ -32,14 +34,19 @@ null_ls.setup({
 		diagnostics.shellcheck,
 	},
 
-	on_attach = function (client, bufnr)
+	on_attach = function(client, bufnr)
 		attach_config.on_attach(client, bufnr)
 
 		-- LSP Format Modification
 		local lsp_format_modifications = require("lsp-format-modifications")
 		lsp_format_modifications.attach(client, bufnr, { format_on_save = false })
 
-		
-  	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>fm", "<cmd>FormatModifications<CR>", { noremap = true, silent = true })
-	end
+		vim.api.nvim_buf_set_keymap(
+			bufnr,
+			"n",
+			"<space>fm",
+			"<cmd>FormatModifications<CR>",
+			{ noremap = true, silent = true }
+		)
+	end,
 })
