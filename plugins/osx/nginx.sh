@@ -2,10 +2,18 @@
 
 brew install nginx
 
-mkdir /usr/local/etc/nginx/conf.d
-
 ln -sf $PWD/configs/osx/nginx.conf /usr/local/etc/nginx/nginx.conf
 
-brew services restart  nginx
+if [[ -d /usr/local/etc/nginx/conf.d ]]
+then
+    rm -rf /usr/local/etc/nginx/conf.d 
+fi
 
-brew services enable nginx
+if [[ -L /usr/local/etc/nginx/conf.d ]]
+then
+    echo "Linked con.d directory"
+else
+    sudo ln -sf $PWD/configs/nginx-conf.d /usr/local/etc/nginx/conf.d
+fi
+
+brew services restart nginx

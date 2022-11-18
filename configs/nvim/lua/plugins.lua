@@ -82,4 +82,7 @@ return require('packer').startup(function()
     "joechrisellis/lsp-format-modifications.nvim",
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  -- Nvim Transparent
+  use 'xiyaowong/nvim-transparent'
 end)

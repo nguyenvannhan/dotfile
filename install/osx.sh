@@ -12,7 +12,7 @@ do
     echo "3. Install - Config ZSH"
     echo "4. Install Nginx Server"
     echo "5. Install PHP (Many Version)"
-    echo "6. Install Composer"
+    echo "6. Install Composer - PHP CS Fixer"
     echo "7. Install Mariadb"
     echo "8. Install Dnsmasq (Setup .test domain is localhost)"
     echo "9. Install Fast Node Management (fnm)"
@@ -66,6 +66,9 @@ do
             echo "----- Install Composer -----"
             brew install composer
             echo "----- # Install Composer -----"
+            echo "----- Install PHP-CS-Fixer -----"
+            brew install php-cs-fixer
+            echo "----- # Install PHP-CS-Fixer -----"
             ;;
         7) 
             echo "----- Setup Mariadb -----"

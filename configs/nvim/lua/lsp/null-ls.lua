@@ -44,7 +44,7 @@ null_ls.setup({
 		vim.api.nvim_buf_set_keymap(
 			bufnr,
 			"n",
-			"<space>fm",
+			"<space>mf",
 			"<cmd>FormatModifications<CR>",
 			{ noremap = true, silent = true }
 		)

@@ -13,9 +13,9 @@ require("bufferline-config")
 require("lualine-config")
 require("indent-blankline-config")
 require("gitsigns-config")
-
---------- Comment Code ------------
+require("toggleterm-config")
 require("kommentary-config")
+require("nvim-transparent")
 
 ------- Config Languge Server -----
 require("nvim-cmp-config")
@@ -26,6 +26,3 @@ require("nvim-cmp-config")
 --require('lsp.tsserver-lsp')
 require("lsp.null-ls")
 require("lsp.mason")
-
--------- TOGGLE TERM -------
-require("toggleterm-config")

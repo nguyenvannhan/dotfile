@@ -12,7 +12,7 @@ do
     echo "3. Install - Config ZSH"
     echo "4. Install Nginx Server"
     echo "5. Install PHP (Many Version)"
-    echo "6. Install Composer"
+    echo "6. Install Composer - PHP CS Fixer"
     echo "7. Install Mariadb"
     echo "8. Install Fast Node Management (fnm)"
     echo "9. Install NeoVim + Config"
