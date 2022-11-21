@@ -32,6 +32,10 @@ null_ls.setup({
 		-- Shell
 		formatting.shfmt,
 		diagnostics.shellcheck,
+
+		-- Ruby ERB
+		formatting.erb_lint,
+		diagnostics.erb_lint,
 	},
 
 	on_attach = function(client, bufnr)
