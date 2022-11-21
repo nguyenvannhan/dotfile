@@ -1,8 +1,9 @@
 local fn = vim.fn
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+    install_path })
 end
 
 return require('packer').startup(function()
@@ -15,11 +16,11 @@ return require('packer').startup(function()
   }
 
   use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim" 
+  use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
   use({
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
   })
 
   use 'folke/tokyonight.nvim'
@@ -35,7 +36,7 @@ return require('packer').startup(function()
   -- For vsnip users.
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
-  
+
   -- Commentary
   use 'b3nj5m1n/kommentary'
 
@@ -45,16 +46,16 @@ return require('packer').startup(function()
   -- Fuzzy Finder
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'nvim-telescope/telescope-fzy-native.nvim'
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Header Footer Info Line
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
   -- Syntax Highlight
@@ -67,20 +68,20 @@ return require('packer').startup(function()
     -- tag = 'release' -- To use the latest release
   }
 
-  -- Markdown Preview 
+  -- Markdown Preview
   use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
 
   -- Terminal
-  use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
+  use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
   --Autopairs
   use "windwp/nvim-autopairs"
 
   use {
     "joechrisellis/lsp-format-modifications.nvim",
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
   -- Nvim Transparent

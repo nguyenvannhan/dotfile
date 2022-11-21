@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "----- Setup VimRC -----"
-if not [[ -L $HOME/.vỉmc ]]
+if [[ ! -L $HOME/.vimrc ]]
 then
     ln -sf $PWD/configs/.vimrc $HOME
 fi
@@ -20,7 +20,7 @@ sudo spctl --master-disable
 
 echo "----- Install neccessary tools -----"
 brew install openssl wget iterm2 
-brew install --cask spotify rectangle
+brew install --cask spotify rectangle chromium firefox
 
 
 echo "----- Install Neccessary Fonts -----"

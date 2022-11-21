@@ -5,9 +5,9 @@ sudo apt-get update && sudo apt-get upgrade
 echo "----- Setup VimRC -----"
 sudo apt-get install vim libssl-dev curl wget snapd
 
-sudo snap install spotify 
+sudo snap install spotify chromium firefox
 
-if not [[ -L $HOME/.vỉmc ]]
+if [[ ! -L $HOME/.vỉmc ]]
 then
     ln -sf $PWD/configs/.vimrc $HOME
 fi

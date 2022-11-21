@@ -14,6 +14,10 @@ require 'nvim-treesitter.configs'.setup {
     'swift',
     'html',
     'scss',
+    'lua',
+    'php',
+    'ruby',
+    'sql',
   },
   autotag = {
     enable = true,
