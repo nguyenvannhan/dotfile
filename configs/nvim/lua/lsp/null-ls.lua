@@ -36,6 +36,9 @@ null_ls.setup({
 		-- Ruby ERB
 		formatting.erb_lint,
 		diagnostics.erb_lint,
+		-- Ruby
+		formatting.rubocop,
+		diagnostics.rubocop,
 	},
 
 	on_attach = function(client, bufnr)
