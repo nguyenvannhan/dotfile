@@ -1,5 +1,7 @@
 #! /bin/bash 
 
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/../.."
+
 sudo apt install wget apt-transport-https gnupg2 software-properties-common
 sudo add-apt-repository ppa:aslatter/ppa
 
@@ -10,5 +12,5 @@ if [[ -L $HOME/.config/alacritty ]]
 then 
     echo "Exists alacritty config already"
 else 
-    ln -s $PWD/configs/alacritty $HOME/.config/alacritty
+    ln -s $BASE_DIR/configs/alacritty $HOME/.config/alacritty
 fi

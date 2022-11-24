@@ -1,5 +1,6 @@
 #!/bin/sh
 
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )/.."
 
 while :
 do
@@ -33,44 +34,44 @@ do
 
         1) 
             echo "----- Install basic tools -----"
-            chmod +x ./plugins/debian/basic.sh 
-            ./plugins/debian/basic.sh 
+            chmod +x $BASE_DIR/plugins/debian/basic.sh 
+            $BASE_DIR/plugins/debian/basic.sh 
             echo "----- # End install basic tools -----"
             ;;
         2)
             echo "----- Install Basic Dev tools ----"
-            chmod +x ./plugins/debian/dev.sh 
-            ./plugins/debian/dev.sh
+            chmod +x $BASE_DIR/plugins/debian/dev.sh 
+            $BASE_DIR/plugins/debian/dev.sh
             echo "----- # End Install Basic Dev Tools -----"
             ;;
         3)
             echo "----- Install - Config ZSH -----"
-            chmod +x ./plugins/debian/zsh.sh
-            ./plugins/debian/zsh.sh
+            chmod +x $BASE_DIR/plugins/debian/zsh.sh
+            $BASE_DIR/plugins/debian/zsh.sh
             echo "----- #  ZSH -----"
             ;;
         4)
             echo "----- Setup Nginx -----"
-            chmod +x plugins/debian/nginx.sh
-            ./plugins/debian/nginx.sh
+            chmod +x $BASE_DIR/plugins/debian/nginx.sh
+            $BASE_DIR/plugins/debian/nginx.sh
             echo "----- # Setup Nginx -----"
             ;;
         5)
             echo "----- Setup PHP -----"
-            chmod +x plugins/debian/php.sh
-            ./plugins/debian/php.sh
+            chmod +x $BASE_DIR/plugins/debian/php.sh
+            $BASE_DIR/plugins/debian/php.sh
             echo "----- # Setup PHP -----"
             ;;
         6)
             echo "----- Install Composer -----"
-            chmod +x plugins/debian/composer.sh 
-            ./plugins/debian/composer.sh
+            chmod +x $BASE_DIR/plugins/debian/composer.sh 
+            $BASE_DIR/plugins/debian/composer.sh
             echo "----- # Install Composer -----"
             ;;
         7) 
             echo "----- Setup Mariadb -----"
-            chmod +x plugins/debian/mariadb.sh
-            ./plugins/debian/mariadb.sh
+            chmod +x $BASE_DIR/plugins/debian/mariadb.sh
+            $BASE_DIR/plugins/debian/mariadb.sh
             echo "----- # Setup Mariadb -----"
             ;;
         8) 
@@ -80,14 +81,14 @@ do
             ;;
         9)
            echo "---- Install NeoVim ----"
-           chmod +x plugins/debian/neovim.sh
-           ./plugins/debian/neovim.sh
+           chmod +x $BASE_DIR/plugins/debian/neovim.sh
+           $BASE_DIR/plugins/debian/neovim.sh
            echo "---- # Install NeoVim ---"
            ;;
         10)
            echo "---- Install Alacritty ----"
-           chmod +x plugins/debian/alacritty.sh 
-           ./plugins/debian/alacritty.sh
+           chmod +x $BASE_DIR/plugins/debian/alacritty.sh 
+           $BASE_DIR/plugins/debian/alacritty.sh
            echo "---- # Install Alacritty ----"
            ;;
         11)
@@ -103,8 +104,8 @@ do
           ;;
         13)
           echo "------ Install RVM -----"
-          chmod +x plugins/debian/rvm.sh
-          ./plugins/debian/rvm.sh
+          chmod +x $BASE_DIR/plugins/debian/rvm.sh
+          $BASE_DIR/plugins/debian/rvm.sh
           echo "----- # Install RVM -----"
           ;;
         *) 

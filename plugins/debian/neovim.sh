@@ -1,5 +1,7 @@
 #! /bin/bash
 
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; BASE_DIR -P )/../.."
+
 sudo apt-get update && sudo apt-get upgrade -y
 
 sudo apt-get install software-properties-common
@@ -35,7 +37,7 @@ if [[ -L $HOME/.config/nvim ]]
 then
     echo "Link nvim config folder already"
 else
-    ln -s $PWD/configs/nvim $HOME/.config/nvim
+    ln -s $BASE_DIR/configs/nvim $HOME/.config/nvim
 fi
 
 git config --global core.editor "nvim"

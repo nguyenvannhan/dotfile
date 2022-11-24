@@ -1,5 +1,7 @@
 #! /bin/bash
 
+BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; BASE_DIR -P )/../.."
+
 sudo apt-get update && sudo apt-get upgrade
 
 echo "----- Install ZSH -----"
@@ -16,10 +18,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 echo "--- Copy Iterm Color ---"
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
-cp $PWD/configs/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
+cp $BASE_DIR/configs/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
 
 
 echo "--- Symlink zshrc -----"
-ln -sf $PWD/configs/.zshrc $HOME
+ln -sf $BASE_DIR/configs/.zshrc $HOME
 
 chsh -s $(which zsh)
