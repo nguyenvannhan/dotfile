@@ -121,3 +121,10 @@ source ${HOME}/.rvm/scripts/rvm
 
 # Yarn global bin
 PATH="$(yarn global bin):$PATH"
+
+# RUST
+. "$HOME/.cargo/env"
+
+# Go 
+export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
+export GOROOT="$HOME/.gobrew/current/go"

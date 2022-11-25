@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 
 function export_variables() {
 	DOTFILE_OS=$(uname -s)
@@ -13,6 +13,7 @@ function export_variables() {
 		IS_DEBIAN=true
 	else
 		echo "Can not detect OS or OS is not supported"
+		exit 0;
 	fi
 
 	BASE_DIR="$(

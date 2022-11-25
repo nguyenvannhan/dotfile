@@ -1,7 +1,5 @@
 #! /bin/bash
 
-BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; BASE_DIR -P )/../.."
-
 echo "----- Install ZSH -----"
 brew install zsh
 
@@ -16,10 +14,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 echo "--- Copy Iterm Color ---"
 mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
-cp $BASE_DIR/configs/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
+cp $DOTFILE_CONFIG_DIR/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
 
 
 echo "--- Symlink zshrc -----"
-ln -sf $BASE_DIR/configs/.zshrc $HOME
+ln -sf $DOTFILE_CONFIG_DIR/.zshrc $HOME
 
 chsh -s $(which zsh)

@@ -1,6 +1,15 @@
-brew install neovim tree-sitter luajit ninja luarocks
+#! /bin/bash
 
-BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; BASE_DIR -P )/../.."
+echo "----- Install Cargo -----"
+curl https://sh.rustup.rs -sSf | sh
+
+curl -sLk https://git.io/gobrew | sh
+source ~/.bashrc
+gobrew install latest
+
+brew install --cask julia
+
+brew install neovim tree-sitter luajit ninja luarocks
 
 brew install tmux
 
@@ -24,7 +33,7 @@ if [[ -L $HOME/.config/nvim ]]
 then
     echo "Link nvim config folder already"
 else
-    ln -s $BASE_DIR/configs/nvim $HOME/.config/nvim
+    ln -s $DOTFILE_CONFIG_DIR/nvim $HOME/.config/nvim
 fi
 
 git config --global core.editor "nvim"
