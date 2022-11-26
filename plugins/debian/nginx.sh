@@ -1,24 +1,10 @@
-#!/bin/sh
-
-BASE_DIR="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; BASE_DIR -P )/../.."
+#! /bin/bash
 
 sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get install nginx
+sudo apt-get install nginx -y
 
-sudo ln -sf $BASE_DIR/configs/debian/nginx.conf /etc/nginx/nginx.conf
-
-if [[ -d /etc/nginx/conf.d ]]
-then
-    sudo rm -rf /etc/nginx/conf.d 
-fi
-
-if [[ -L /etc/nginx/conf.d ]]
-then
-    echo "Linked con.d directory"
-else
-    sudo ln -sf $BASE_DIR/configs/nginx-conf.d /etc/nginx/conf.d
-fi
+sudo ln -sf $DOTFILE_CONFIG_OS_DIR/nginx.conf /etc/nginx/nginx.conf
 
 sudo ufw allow 'Nginx Full'
 

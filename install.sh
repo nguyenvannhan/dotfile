@@ -27,7 +27,7 @@ function export_variables() {
 	export DOTFILE_IS_DEBIAN=$IS_DEBIAN
 	export DOTFILE_CONFIG_DIR=$BASE_DIR/configs
 
-	if [ $IS_MACOS ]; then
+	if [ $IS_MACOS == "true" ]; then
 		export DOTFILE_PLUGIN_DIR=$BASE_DIR/plugins/osx
 		export DOTFILE_CONFIG_OS_DIR=$BASE_DIR/configs/osx
 	else
@@ -51,8 +51,7 @@ function unset_variables() {
 #####################################
 export_variables
 
-if [ ${IS_MACOS} ]; then
-
+if [ ${DOTFILE_IS_MACOS} == "true" ]; then
 	chmod +x "${DOTFILE_BASE_DIR}/menu/osx.sh"
 	"${DOTFILE_BASE_DIR}/menu/osx.sh"
 else

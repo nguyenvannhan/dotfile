@@ -3,7 +3,7 @@
 sudo apt-get update && sudo apt-get upgrade
 
 # Install Font fira code
-sudo apt install fonts-firacode
+sudo apt install fonts-firacode -y
 
 # install Source Code Pro Font
 set  -euo pipefail

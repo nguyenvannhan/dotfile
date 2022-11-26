@@ -1,13 +1,13 @@
 #! /bin/bash
 
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade
 
-sudo apt-get install software-properties-common
+sudo apt-get install software-properties-common -y
 
 sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get install neovim
-sudo apt-get install julia
+sudo apt-get install neovim -y
+sudo apt-get install julia -y
 
 
 sudo apt-get install libtree-sitter0 luajit ninja-build luarocks tmux neovim silversearcher-ag python2.7 python3 -y

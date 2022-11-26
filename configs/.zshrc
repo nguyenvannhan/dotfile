@@ -128,3 +128,11 @@ PATH="$(yarn global bin):$PATH"
 # Go 
 export PATH="$HOME/.gobrew/current/bin:$HOME/.gobrew/bin:$PATH"
 export GOROOT="$HOME/.gobrew/current/go"
+
+# fnm
+export PATH="/home/nvnhan/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+# fnm
+export PATH="/home/nvnhan/.local/share/fnm:$PATH"
+eval "`fnm env`"

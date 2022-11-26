@@ -161,11 +161,4 @@ while :; do
 	esac
 
 	printf "\r\n"
-
-	# 9)
-	# 	echo "----- Install FNM -----"
-	# 	curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
-	# 	echo "----- # Install FNM -----"
-	# 	;;
-	# 11)
 done

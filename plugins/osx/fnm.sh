@@ -2,10 +2,9 @@
 
 curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
 
+source ~/.bashrc
 
 fnm install --lts
-
-source ~/.bashrc
 
 npm i -g yarn
 

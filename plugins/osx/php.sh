@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 brew tap shivammathur/php
 brew install icu4c
