@@ -18,6 +18,6 @@ cp $DOTFILE_CONFIG_DIR/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom
 
 
 echo "--- Symlink zshrc -----"
-ln -sf $DOTFILE_CONFIG_DIR/.zshrc $HOME
+ln -sf $DOTFILE_CONFIG_OS_DIR/.zshrc $HOME
 
 chsh -s $(which zsh)
