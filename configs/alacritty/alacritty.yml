@@ -11,7 +11,7 @@ window:
   #     - transparent: Title bar, transparent background, but no title bar buttons
   decorations: none
 
-  opacity: 0.9
+  opacity: 1
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
