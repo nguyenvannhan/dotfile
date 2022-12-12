@@ -132,7 +132,3 @@ export GOROOT="$HOME/.gobrew/current/go"
 # fnm
 export PATH="/home/nvnhan/.local/share/fnm:$PATH"
 eval "`fnm env`"
-
-# fnm
-export PATH="/home/nvnhan/.local/share/fnm:$PATH"
-eval "`fnm env`"
