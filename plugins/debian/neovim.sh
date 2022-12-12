@@ -4,13 +4,20 @@ sudo apt-get update && sudo apt-get upgrade
 
 sudo apt-get install software-properties-common -y
 
-sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt-get update
-sudo apt-get install neovim -y
 sudo apt-get install julia -y
 
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+chmod u+x ./nvim.appimage
+./nvim.appimage --appimage-extract
+sudo mv ./squashfs-root $HOME
+if [[ ! -L /usr/bin/nvim ]]
+then
+    sudo ln -s "$HOME"/squashfs-root/AppRun /usr/bin/nvim
+fi
+sudo rm -r ./nvim.appimage
 
-sudo apt-get install libtree-sitter0 luajit ninja-build luarocks tmux neovim silversearcher-ag python2.7 python3 -y
+sudo apt-get install libtree-sitter0 luajit ninja-build luarocks tmux silversearcher-ag python2.7 python3 -y
 
 sudo snap install universal-ctags
 
@@ -27,7 +34,7 @@ source ~/.bashrc
 
 gobrew install latest
 
-yarn global add tree-sitter-cli neovim
+yarn global add tree-sitter-cli
 
 if [ ! -d "${HOME}/.config" ]
 then
@@ -38,7 +45,7 @@ if [[ -L $HOME/.config/nvim ]]
 then
     echo "Link nvim config folder already"
 else
-    ln -s $BASE_DIR/configs/nvim $HOME/.config/nvim
+    ln -s $DOTFILE_CONFIG_DIR/nvim $HOME/.config/nvim
 fi
 
 git config --global core.editor "nvim"
