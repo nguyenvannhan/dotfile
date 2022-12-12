@@ -136,3 +136,4 @@ export PATH="/home/nvnhan/.local/share/fnm:$PATH"
 eval "`fnm env`"
 
 export GTK_IM_MODULE="xim"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
