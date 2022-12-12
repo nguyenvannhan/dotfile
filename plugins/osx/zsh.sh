@@ -13,11 +13,11 @@ echo "---- ZSH Highlight ---"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo "--- Copy Iterm Color ---"
-mkdir -p ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
-cp $DOTFILE_CONFIG_DIR/zsh/onedark.itermcolors ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/colors
+mkdir -p "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/colors
+cp "$DOTFILE_CONFIG_DIR"/zsh/onedark.itermcolors "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}"/colors
 
 
 echo "--- Symlink zshrc -----"
-ln -sf $DOTFILE_CONFIG_OS_DIR/.zshrc $HOME
+ln -sf "$DOTFILE_CONFIG_OS_DIR"/.zshrc "$HOME"
 
 chsh -s $(which zsh)
