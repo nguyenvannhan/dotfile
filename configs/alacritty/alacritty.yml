@@ -11,7 +11,7 @@ window:
   #     - transparent: Title bar, transparent background, but no title bar buttons
   decorations: none
 
-  opacity: 0.9
+  opacity: 1
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -28,13 +28,13 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: FiraCode Nerd Font Mono
+    family: Source Code Pro 
     style: Regular
   bold:
-    family: FiraCode Nerd Font Mono
+    family: Source Code Pro
     style: Bold
   italic:
-    family: FiraCode Nerd Font Mono
+    family: Source Code Pro
     style: Italic
 
   size: 12.0
