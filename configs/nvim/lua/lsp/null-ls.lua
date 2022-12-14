@@ -5,6 +5,7 @@ end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local code_actions = null_ls.builtins.code_actions
 
 local attach_config = require("lsp.attach")
 
@@ -28,6 +29,10 @@ null_ls.setup({
 		-- JSON Formatting
 		formatting.prettierd,
 		diagnostics.jsonlint,
+
+		-- JS - prettierd formatting is in JSON Area
+		diagnostics.eslint_d,
+		code_actions.eslint_d,
 
 		-- Shell
 		formatting.shfmt,
