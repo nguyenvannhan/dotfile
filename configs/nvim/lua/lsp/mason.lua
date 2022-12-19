@@ -11,7 +11,9 @@ local servers = {
   "sumneko_lua",
   "phpactor",
   "solargraph",
+  "tsserver",
   "eslint",
+  "tailwindcss",
 }
 
 mason.setup({
