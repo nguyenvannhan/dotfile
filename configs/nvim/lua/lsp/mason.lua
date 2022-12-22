@@ -14,6 +14,7 @@ local servers = {
   "tsserver",
   "eslint",
   "tailwindcss",
+  "emmet_ls",
 }
 
 mason.setup({
