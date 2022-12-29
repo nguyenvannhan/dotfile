@@ -29,7 +29,7 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.wildignore:append("*/node_modules/*,*/vendor/*")
 -- Only active mouse in visual mode
-vim.opt.mouse='v'
+vim.opt.mouse = 'v'
 
 if getOS() == "Darwin" or getOS() == "OSX" then
 	vim.cmd([[set clipboard=unnamed]])

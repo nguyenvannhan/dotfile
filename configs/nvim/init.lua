@@ -15,7 +15,7 @@ require("indent-blankline-config")
 require("gitsigns-config")
 require("toggleterm-config")
 require("kommentary-config")
-require("nvim-transparent")
+-- require("nvim-transparent")
 
 ------- Config Languge Server -----
 require("nvim-cmp-config")

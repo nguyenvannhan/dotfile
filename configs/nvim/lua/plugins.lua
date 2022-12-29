@@ -50,6 +50,7 @@ return require('packer').startup(function()
   }
   use 'nvim-telescope/telescope-fzy-native.nvim'
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Header Footer Info Line
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
