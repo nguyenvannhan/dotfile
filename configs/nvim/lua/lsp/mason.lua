@@ -8,7 +8,7 @@ end
 local servers = {
   "diagnosticls",
   "jsonls",
-  "sumneko_lua",
+  "lua_ls",
   "phpactor",
   "solargraph",
   "tsserver",
