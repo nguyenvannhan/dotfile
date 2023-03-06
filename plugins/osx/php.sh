@@ -3,8 +3,7 @@
 brew tap shivammathur/php
 brew install icu4c
 
-while : 
-do 
+while :; do
     echo "========== Choose PHP Version ======"
     echo "1. Install PHP 8.1"
     echo "2. Install PHP 8.0"
@@ -15,37 +14,41 @@ do
 
     read phpVersion
 
-    case $phpVersion in 
-        1)
-            brew install shivammathur/php/php@8.1
-            ln -sf $BASE_CONFIG_OS_DIR/php81.ini /usr/local/etc/php/8.1/php.ini
-            ln -sf $BASE_CONFIG_OS_DIR/php81-fpm.conf /usr/local/etc/php/8.1/php-fpm.d/www.conf
-           
-            brew services restart php@8.1
-            ;;
-        2)
-            brew install shivammathur/php/php@8.0
-            ln -sf $BASE_CONFIG_OS_DIR/php80.ini /usr/local/etc/php/8.0/php.ini
-            ln -sf $BASE_CONFIG_OS_DIR/php80-fpm.conf /usr/local/etc/php/8.0/php-fpm.d/www.conf
-           
-            brew services restart php@8.0
-            ;;
-        3)
-            brew install shivammathur/php/php@7.4
-            ln -sf $BASE_CONFIG_OS_DIR/php74.ini /usr/local/etc/php/7.4/php.ini
-            ln -sf $BASE_CONFIG_OS_DIR/php74-fpm.conf /usr/local/etc/php/7.4/php-fpm.d/www.conf
-           
-            brew services restart php@7.4
-            ;;
-        4)
-            brew install shivammathur/php/php@7.2
-            ln -sf $BASE_CONFIG_OS_DIR/php72.ini /usr/local/etc/php/7.2/php.ini
-            ln -sf $BASE_CONFIG_OS_DIR/php72-fpm.conf /usr/local/etc/php/7.2/php-fpm.d/www.conf
-
-            brew services restart php@7.2
-            ;;
-        0)
-            break
-            ;;
+    case $phpVersion in
+    1)
+        brew install shivammathur/php/php@8.1
+        PHP_CONFIG_DIR="/usr/local/etc/php/8.1/"
+        ;;
+    2)
+        brew install shivammathur/php/php@8.0
+        PHP_CONFIG_DIR="/usr/local/etc/php/8.0/"
+        ;;
+    3)
+        brew install shivammathur/php/php@7.4
+        PHP_CONFIG_DIR="/usr/local/etc/php/7.4/"
+        ;;
+    4)
+        brew install shivammathur/php/php@7.2
+        PHP_CONFIG_DIR="/usr/local/etc/php/7.2/"
+        ;;
+    0)
+        break
+        ;;
     esac
+    echo "=============================="
+    echo "====== SETUP INSTRUCTION ====="
+    echo "=============================="
+    echo "Go to config file at ${PHP_CONFIG_DIR}php-fpm.d/www.conf"
+    echo " - Change user value to system user. Ex: user=nguyenavnnhan"
+    echo " - Change group value to \`staff\`"
+    echo "If missing user and group key. Add them"
+    echo " - Change value of listen to 127.0.0.1:port. With port is port number your want to use"
+    echo "After all, run this command:"
+    echo "    brew services start phpVersion"
+    echo "With phpVersion is php you installed. Ex: php@8.1 php@7.4"
+    
+    echo "-------------------------------------------"
+    echo "To link a php verstion to global. Run command: "
+    echo "    brew link --force --override phpVersion"
+    echo "=============================="
 done
