@@ -17,19 +17,23 @@ while :; do
     case $phpVersion in
     1)
         brew install shivammathur/php/php@8.1
-        PHP_CONFIG_DIR="/usr/local/etc/php/8.1/"
+        PHP_INTEL_CONFIG_DIR="/usr/local/etc/php/8.1/"
+        PHP_ARM_CONFIG_DIR="/opt/homebrew/etc/php/8.1/"
         ;;
     2)
         brew install shivammathur/php/php@8.0
-        PHP_CONFIG_DIR="/usr/local/etc/php/8.0/"
+        PHP_INTEL_CONFIG_DIR="/usr/local/etc/php/8.0/"
+        PHP_ARM_CONFIG_DIR="/opt/homebrew/etc/php/8.0/"
         ;;
     3)
         brew install shivammathur/php/php@7.4
-        PHP_CONFIG_DIR="/usr/local/etc/php/7.4/"
+        PHP_INTEL_CONFIG_DIR="/usr/local/etc/php/7.4/"
+        PHP_ARM_CONFIG_DIR="/opt/homebrew/etc/php/7.4/"
         ;;
     4)
         brew install shivammathur/php/php@7.2
-        PHP_CONFIG_DIR="/usr/local/etc/php/7.2/"
+        PHP_INTEL_CONFIG_DIR="/usr/local/etc/php/7.2/"
+        PHP_ARM_CONFIG_DIR="/opt/homebrew/etc/php/7.2/"
         ;;
     0)
         break
@@ -38,7 +42,7 @@ while :; do
     echo "=============================="
     echo "====== SETUP INSTRUCTION ====="
     echo "=============================="
-    echo "Go to config file at ${PHP_CONFIG_DIR}php-fpm.d/www.conf"
+    echo "Go to config file at ${PHP_INTEL_CONFIG_DIR}php-fpm.d/www.conf (Intel Chip) or ${PHP_ARM_CONFIG_DIR}php-fpm.d/www.conf (Apple Silicon Chip)"
     echo " - Change user value to system user. Ex: user=nguyenavnnhan"
     echo " - Change group value to \`staff\`"
     echo "If missing user and group key. Add them"
@@ -46,7 +50,7 @@ while :; do
     echo "After all, run this command:"
     echo "    brew services start phpVersion"
     echo "With phpVersion is php you installed. Ex: php@8.1 php@7.4"
-    
+
     echo "-------------------------------------------"
     echo "To link a php verstion to global. Run command: "
     echo "    brew link --force --override phpVersion"

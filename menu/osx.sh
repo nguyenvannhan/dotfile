@@ -137,7 +137,9 @@ while :; do
 		;;
 	"tmux")
 		brew install tmux
-		ln -sf "${DOTFILE_CONFIG_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
+		if [[ ! -f $HOME/.tmux.conf ]]; then
+			ln -sf "${DOTFILE_CONFIG_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
+		fi
 		;;
 	"sdkman")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/sdkman.sh"

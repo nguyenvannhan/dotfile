@@ -6,8 +6,8 @@ if [[ ! -d $HOME/.config ]]; then
 	mkdir $HOME/.config
 fi
 
-if [[ -L $HOME/.config/alacritty ]]; then
+if [[ -d $HOME/.config/alacritty ]]; then
 	echo "Exists alacritty config already"
 else
-	ln -s $DOTFILE_CONFIG_DIR/alacritty $HOME/.config/alacritty
+	cp -r $DOTFILE_CONFIG_DIR/alacritty $HOME/.config/alacritty
 fi
