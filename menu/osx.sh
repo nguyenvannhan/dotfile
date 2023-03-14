@@ -5,7 +5,7 @@ if [ ! $DOTFILE_INIT ]; then
 	exit 0
 fi
 
-SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "tmux" "sdkman" "rvm" "alacritty" "neovim")
+SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "tmux" "sdkman" "rvm" "fvm" "alacritty" "neovim")
 ################################
 ########## Print MENU ##########
 ################################
@@ -49,10 +49,13 @@ while :; do
 			MENU_NAME="Install - Config Tmux"
 			;;
 		"sdkman")
-			MENU_NAME="Install SDKMan and Java Latest"
+			MENU_NAME="Install SDKMan"
 			;;
 		"rvm")
 			MENU_NAME="Install RVM And Ruby Latest"
+			;;
+		"fvm")
+			MENU_NAME="Install FVM (Flutter Version Manager)"
 			;;
 		"alacritty")
 			MENU_NAME="Install - Config Alacritty"
@@ -142,12 +145,15 @@ while :; do
 		fi
 		;;
 	"sdkman")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/sdkman.sh"
-		"${DOTFILE_PLUGIN_DIR}/sdkman.sh"
+		curl -s "https://get.sdkman.io" | bash
 		;;
 	"rvm")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/rvm.sh"
 		"${DOTFILE_PLUGIN_DIR}/rvm.sh"
+		;;
+	"fvm")
+		chmod +x "${DOTFILE_PLUGIN_DIR}/fvm.sh"
+		"${DOTFILE_PLUGIN_DIR}/fvm.sh"
 		;;
 	"alacritty")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/alacritty.sh"
