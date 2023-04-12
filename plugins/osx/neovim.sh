@@ -22,7 +22,7 @@ fi
 if [[ -d $HOME/.config/nvim ]]; then
     echo "Link nvim config folder already"
 else
-    cp -r $DOTFILE_CONFIG_DIR/nvim $HOME/.config/nvim
+    ln -sf $DOTFILE_CONFIG_DIR/nvim $HOME/.config/nvim
 fi
 
 git config --global core.editor "nvim"
