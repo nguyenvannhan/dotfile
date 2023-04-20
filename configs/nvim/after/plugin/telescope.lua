@@ -92,7 +92,7 @@ vim.keymap.set('n', ';g', function()
   })
 end)
 vim.keymap.set('n', ';r', builtin.live_grep)
-vim.keymap.set("n", ";fb", function()
+vim.keymap.set("n", ";b", function()
   telescope.extensions.file_browser.file_browser({
     path = "%:p:h",
     cwd = telescope_buffer_dir(),

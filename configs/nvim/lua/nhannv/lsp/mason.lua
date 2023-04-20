@@ -15,17 +15,17 @@ local servers = {
   "solargraph",
   "tsserver",
   "tailwindcss",
+  "vuels"
 }
-
 
 mason.setup({
   ui = {
     icons = {
       package_installed = "✓",
       package_pending = "➜",
-      package_uninstalled = "✗"
-    }
-  }
+      package_uninstalled = "✗",
+    },
+  },
 })
 
 mason_lsp.setup({
@@ -38,25 +38,25 @@ if not lspconfig_status_ok then
   return
 end
 
-local attach = require('nhannv.lsp.attach')
+local attach = require("nhannv.lsp.attach")
 local opts = {}
 
 for _, server in pairs(servers) do
   opts = {
     on_attach = attach.on_attach,
-    capabilities = attach.capabilities
+    capabilities = attach.capabilities,
   }
 
   if server == "lua_ls" then
-    opts['settings'] = {
+    opts["settings"] = {
       Lua = {
         runtime = {
           -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = 'LuaJIT',
+          version = "LuaJIT",
         },
         diagnostics = {
           -- Get the language server to recognize the `vim` global
-          globals = { 'vim' },
+          globals = { "vim" },
         },
         workspace = {
           -- Make the server aware of Neovim runtime files
@@ -66,7 +66,7 @@ for _, server in pairs(servers) do
         telemetry = {
           enable = false,
         },
-      }
+      },
     }
   end
 
