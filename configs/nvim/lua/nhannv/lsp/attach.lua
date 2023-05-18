@@ -17,6 +17,17 @@ function attach.on_attach(client, bufnr)
   -- Mappings.
   local opts = { noremap = true, silent = true }
 
+  function FormatRangeFunction()
+    vim.lsp.buf.format({
+      async = false,
+      range = {
+        ["start"] = vim.api.nvim_buf_get_mark(0, "<"),
+        ["end"] = vim.api.nvim_buf_get_mark(0, ">"),
+      }
+    })
+  end
+
+
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
@@ -35,6 +46,7 @@ function attach.on_attach(client, bufnr)
   buf_set_keymap("n", "<leader>,", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.format({ timeout_ms=3000 })<CR>", opts)
+  buf_set_keymap("v", "<space>r", "<cmd>lua FormatRangeFunction()<CR>", opts)
 
   -- Format On Save Config
   --if client.resolved_capabilities.document_formatting then

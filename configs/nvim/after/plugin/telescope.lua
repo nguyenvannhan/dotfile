@@ -104,3 +104,4 @@ vim.keymap.set("n", ";b", function()
     layout_config = { height = 40 }
   })
 end)
+vim.keymap.set('n', ';j', builtin.current_buffer_fuzzy_find)

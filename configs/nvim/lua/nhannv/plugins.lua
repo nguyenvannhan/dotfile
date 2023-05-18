@@ -28,13 +28,12 @@ end
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
-  --use("EdenEast/nightfox.nvim")
-  use { "ellisonleao/gruvbox.nvim" }
+  use("navarasu/onedark.nvim")
   use("akinsho/nvim-bufferline.lua")
   use("nvim-lualine/lualine.nvim") -- Statusline
 
   use("lewis6991/gitsigns.nvim")
-  use "terrortylor/nvim-comment"
+  use("terrortylor/nvim-comment")
 
   use({ "akinsho/toggleterm.nvim", tag = "*" })
 
@@ -50,6 +49,8 @@ return packer.startup(function(use)
       "nvim-tree/nvim-web-devicons", -- optional
     },
   })
+  use("norcalli/nvim-colorizer.lua")
+  use("lukas-reineke/indent-blankline.nvim")
 
   -- Telescope Area
   use({
@@ -84,6 +85,7 @@ return packer.startup(function(use)
       "nvim-lua/plenary.nvim",
     },
   })
+  use("windwp/nvim-autopairs")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
