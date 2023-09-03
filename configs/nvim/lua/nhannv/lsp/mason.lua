@@ -15,6 +15,7 @@ local servers = {
   "solargraph",
   "tsserver",
   "tailwindcss",
+  "yamlls",
   "vuels"
 }
 
