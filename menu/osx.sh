@@ -5,7 +5,7 @@ if [ ! $DOTFILE_INIT ]; then
 	exit 0
 fi
 
-SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "tmux" "sdkman" "rvm" "fvm" "alacritty" "neovim")
+SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "tmux" "sdkman" "rvm" "fvm" "alacritty" "neovim", "yabai")
 ################################
 ########## Print MENU ##########
 ################################
@@ -63,6 +63,9 @@ while :; do
 		"neovim")
 			MENU_NAME="Install - Config Neovim"
 			;;
+    "yabai")
+      MENU_NAME="Install - Config Yabai - SKHD"
+      ;;
 
 		"config")
 			echo ""
@@ -139,10 +142,8 @@ while :; do
 		"${DOTFILE_PLUGIN_DIR}/dnsmasq.sh"
 		;;
 	"tmux")
-		brew install tmux
-		if [[ ! -f $HOME/.tmux.conf ]]; then
-			ln -sf "${DOTFILE_CONFIG_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
-		fi
+		chmod +x "${DOTFILE_PLUGIN_DIR}/tmux.sh"
+		"${DOTFILE_PLUGIN_DIR}/tmux.sh"
 		;;
 	"sdkman")
 		curl -s "https://get.sdkman.io" | bash
@@ -162,6 +163,10 @@ while :; do
 	"neovim")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/neovim.sh"
 		"${DOTFILE_PLUGIN_DIR}/neovim.sh"
+		;;
+	"yabai")
+		chmod +x "${DOTFILE_PLUGIN_DIR}/yabai.sh"
+		"${DOTFILE_PLUGIN_DIR}/yabai.sh"
 		;;
 	*)
 		echo "Missing Execute Command For Selected Options"
