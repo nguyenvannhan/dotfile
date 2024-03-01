@@ -5,7 +5,7 @@ if [ ! $DOTFILE_INIT ]; then
 	exit 0
 fi
 
-SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "tmux" "sdkman" "rvm" "alacritty" "neovim")
+SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "sdkman" "rvm")
 ################################
 ########## Print MENU ##########
 ################################
@@ -42,20 +42,11 @@ while :; do
 		"php-cs-fixer")
 			MENU_NAME="Install PHP-CS-Fixer"
 			;;
-		"tmux")
-			MENU_NAME="Install - Config Tmux"
-			;;
 		"sdkman")
 			MENU_NAME="Install SDKMan and Java Latest"
 			;;
 		"rvm")
 			MENU_NAME="Install RVM And Ruby Latest"
-			;;
-		"alacritty")
-			MENU_NAME="Install - Config Alacritty"
-			;;
-		"neovim")
-			MENU_NAME="Install - Config Neovim"
 			;;
 
 		"config")
@@ -130,10 +121,6 @@ while :; do
 		chmod +x "${DOTFILE_PLUGIN_DIR}/phpcsfixer.sh"
 		"${DOTFILE_PLUGIN_DIR}/phpcsfixer.sh"
 		;;
-	"tmux")
-		sudo apt-get install tmux
-		ln -sf "${DOTFILE_CONFIG_DIR}/.tmux.conf" "${HOME}/.tmux.conf"
-		;;
 	"sdkman")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/sdkman.sh"
 		"${DOTFILE_PLUGIN_DIR}/sdkman.sh"
@@ -141,14 +128,6 @@ while :; do
 	"rvm")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/rvm.sh"
 		"${DOTFILE_PLUGIN_DIR}/rvm.sh"
-		;;
-	"alacritty")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/alacritty.sh"
-		"${DOTFILE_PLUGIN_DIR}/alacritty.sh"
-		;;
-	"neovim")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/neovim.sh"
-		"${DOTFILE_PLUGIN_DIR}/neovim.sh"
 		;;
     *)
 		echo "Missing Execute Command For Selected Options"
@@ -237,24 +216,6 @@ do
             curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell
             echo "----- # Install FNM -----"
             ;;
-        9)
-           echo "---- Install NeoVim ----"
-           chmod +x $BASE_DIR/plugins/debian/neovim.sh
-           $BASE_DIR/plugins/debian/neovim.sh
-           echo "---- # Install NeoVim ---"
-           ;;
-        10)
-           echo "---- Install Alacritty ----"
-           chmod +x $BASE_DIR/plugins/debian/alacritty.sh 
-           $BASE_DIR/plugins/debian/alacritty.sh
-           echo "---- # Install Alacritty ----"
-           ;;
-        11)
-          echo "---- Install Tmux -----"
-          sudo apt-get install tmux
-          ln -sf $PWD/configs/.tmux.conf $HOME/.tmux.conf
-          echo "---- # Install Tmux ----"
-          ;;
         12)
           echo "---- Install SDKMan ----"
           curl -s "https://get.sdkman.io?rcupdate=false" | bash

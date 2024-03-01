@@ -5,7 +5,7 @@ if [ ! $DOTFILE_INIT ]; then
 	exit 0
 fi
 
-SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "tmux" "sdkman" "rvm" "fvm" "alacritty" "neovim", "yabai")
+SCRIPT_ARR=("basic" "dev" "zsh" "fnm" "nginx" "mariadb" "php" "composer" "php-cs-fixer" "dnsmasq" "sdkman" "rvm" "fvm")
 ################################
 ########## Print MENU ##########
 ################################
@@ -45,9 +45,6 @@ while :; do
 		"dnsmasq")
 			MENU_NAME="Install - Config DnsMasq"
 			;;
-		"tmux")
-			MENU_NAME="Install - Config Tmux"
-			;;
 		"sdkman")
 			MENU_NAME="Install SDKMan"
 			;;
@@ -57,15 +54,6 @@ while :; do
 		"fvm")
 			MENU_NAME="Install FVM (Flutter Version Manager)"
 			;;
-		"alacritty")
-			MENU_NAME="Install - Config Alacritty"
-			;;
-		"neovim")
-			MENU_NAME="Install - Config Neovim"
-			;;
-    "yabai")
-      MENU_NAME="Install - Config Yabai - SKHD"
-      ;;
 
 		"config")
 			echo ""
@@ -141,10 +129,6 @@ while :; do
 		chmod +x "${DOTFILE_PLUGIN_DIR}/dnsmasq.sh"
 		"${DOTFILE_PLUGIN_DIR}/dnsmasq.sh"
 		;;
-	"tmux")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/tmux.sh"
-		"${DOTFILE_PLUGIN_DIR}/tmux.sh"
-		;;
 	"sdkman")
 		curl -s "https://get.sdkman.io" | bash
 		;;
@@ -155,18 +139,6 @@ while :; do
 	"fvm")
 		chmod +x "${DOTFILE_PLUGIN_DIR}/fvm.sh"
 		"${DOTFILE_PLUGIN_DIR}/fvm.sh"
-		;;
-	"alacritty")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/alacritty.sh"
-		"${DOTFILE_PLUGIN_DIR}/alacritty.sh"
-		;;
-	"neovim")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/neovim.sh"
-		"${DOTFILE_PLUGIN_DIR}/neovim.sh"
-		;;
-	"yabai")
-		chmod +x "${DOTFILE_PLUGIN_DIR}/yabai.sh"
-		"${DOTFILE_PLUGIN_DIR}/yabai.sh"
 		;;
 	*)
 		echo "Missing Execute Command For Selected Options"

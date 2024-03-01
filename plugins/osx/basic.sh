@@ -24,7 +24,7 @@ sudo spctl --master-disable
 
 echo "----- Install neccessary tools -----"
 brew install openssl wget iterm2 
-brew install --cask spotify rectangle firefox amethyst
+brew install --cask rectangle firefox
 
 
 echo "----- Install Neccessary Fonts -----"
