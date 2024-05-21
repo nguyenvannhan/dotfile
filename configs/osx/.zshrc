@@ -122,3 +122,9 @@ export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
 
 export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/nhannv/.dart-cli-completion/zsh-config.zsh ]] && . /Users/nhannv/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
