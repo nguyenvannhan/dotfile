@@ -212,11 +212,15 @@ bar {
 	position top
 }
 
-for_window [window_role="alert"] floating enable
+for_window [class="^.*"] border pixel 1
 
-for_window [class="^.*"] border none
+floating_minimum_size 450 x 450
+floating_maximum_size 600 x 600
 
 gaps inner 10px
 
 # Wallpaper
 exec --no-startup-id feh --bg-fill ~/dotfile/arch-wallpaper.png
+
+# Polybar 
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
